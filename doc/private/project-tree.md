@@ -1,0 +1,46 @@
+# 目录层级规范
+--bin 									//cmake生成的可执行文件拷贝到这里，build路径里面太乱
+--install								//cmake安装路径	
+	--doc
+	--bin
+	--include
+	--lib
+	--example
+	--resource
+	--config
+--build									//cmake构建的临时文件和解决方案
+--code									//源码
+	--version
+	--src								//不公开的代码
+	--interface							//库提供给用户调用的接口
+	--app								//引用库的可执行工程，多个工程可以文件夹分类
+--example								//提供给用户的参考例子
+--cmake									//cmake的公共函数可以放在这里
+--doc									
+	--public							//提供给用户的说明文件
+	--private							//内部不公开的技术文档
+--config								//工程须用到的配置文件
+--resource								//工程须用到的资源文件
+--script								//方便自动化构建的脚本、jenkins打包机的配置脚本
+--3th									//第三方库
+	--common
+		--jsoncpp
+			--lib
+			--include
+			--Findjsoncpp.cmake
+	--windows
+	--linux
+	--darwin
+--build.bat
+--build.sh
+--CMakelists.txt
+--cpackage.json
+
+# CMakelists.txt 模块
+--define prject                  	//cmake工程定义
+--define global variables		 	//定义全局变量
+--config version info				//配置版本信息
+--project add library target		//添加库目标
+--target link 3th					//链接第三方库
+//--project add runnable target		//添加可执行目标【可选】
+--install							//设置安装路径

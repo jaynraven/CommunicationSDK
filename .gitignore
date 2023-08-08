@@ -1,0 +1,5 @@
+build/
+bin/
+install/
+code/version/*.h
+code/version/*.rc
